@@ -70,3 +70,54 @@ nav {
   padding: 120px 40px 0;
   overflow: hidden;
 }
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--dark);
+  background-image: url('../assets/hero-bg.gif'); 
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,8,8,0.2) 0%,
+    rgba(8,8,8,0.4) 50%,
+    rgba(8,8,8,0.95) 100%
+  );
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-logo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-logo {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 950;
+  color: var(--orange);
+  letter-spacing: 4px;
+  text-shadow: 0 0 30px var(--orange-glow);
+  line-height: 1;
+}
