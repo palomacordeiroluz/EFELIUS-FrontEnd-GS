@@ -271,3 +271,96 @@ section {
   font-size: 11px;
   color: rgba(0,0,0,0.6);
 }
+
+.fluxo-arrow {
+  font-size: 20px;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.ramificar-box {
+  background: rgba(232,130,10,0.08);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.ramificar-box h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--orange-light);
+  margin-bottom: 10px;
+}
+
+.ramificar-box p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.tech-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.tech-card {
+  background: var(--orange);
+  border-radius: 10px;
+  padding: 18px 16px;
+}
+
+.tech-card p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.tech-card span {
+  font-size: 11px;
+  color: rgba(0,0,0,0.6);
+}
+
+/* ── DIVISOR COM LOGO ── */
+.logo-divider {
+  text-align: center;
+  padding: 30px 40px;
+  background: none;
+}
+
+.logo-divider .big-logo {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--orange);
+  letter-spacing: 8px;
+  text-shadow: 0 0 60px var(--orange-glow);
+}
+
+/* ── OBJETIVOS ── */
+#objetivos {
+  max-width: 100%;
+  padding: 9% 40px;
+  background: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.objetivos-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/terra.gif'); 
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+#objetivos .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
