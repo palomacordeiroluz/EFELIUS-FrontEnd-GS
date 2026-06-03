@@ -2,14 +2,24 @@
 
 /* ── VARIABLES ── */
 :root {
+  --main: #E8820A;
+  --main-light: #F5A235;
+  --main-glow: rgba(232, 130, 10, 0.3);
   --orange: #E8820A;
   --orange-light: #F5A235;
   --orange-glow: rgba(232, 130, 10, 0.3);
+  --green: #24af12;
+  --green-light: #3fff49;
+  --green-glow: rgba(52, 177, 35, 0.3);
+  --blue: #4c60cf;
+  --blue-light: #7597f7;
+  --blue-glow: rgba(58, 43, 190, 0.3);
   --dark: #080808;
   --dark-2: #0f0f0f;
   --dark-3: #141414;
-  --card-bg: rgba(20, 14, 4, 0.85);
-  --card-border: rgba(232, 130, 10, 0.25);
+  --card-border-orange: rgba(232, 130, 10, 0.25);
+  --card-border-green: rgba(52, 177, 35, 0.25);
+  --card-border-blue: rgba(58, 43, 190, 0.25);
   --text: #fff;
   --text-muted: rgba(255,255,255,0.55);
   --font-display: 'Orbitron', sans-serif;
@@ -30,15 +40,50 @@ body {
 /* ── NAV ── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 18px 40px;
   background: rgba(8,8,8,0.7);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(232,130,10,0.1);
+  border-bottom: 1px solid var(--main-glow);
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  z-index: 100;
+}
+
+.nav-esquerda,
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-esquerda {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-esquerda button {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+.nav-esquerda button:hover {
+    transform: scale(1.15);
+}
+#colorButtonGreen {
+    background: var(--green);
+}
+#colorButtonOrange {
+    background: var(--orange);
+}
+#colorButtonBlue {
+    background: var(--blue);
 }
 
 .nav-links {
@@ -58,7 +103,7 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--orange-light);
+  color: var(--main-light);
 }
 
 /* ── HERO ── */
@@ -116,9 +161,9 @@ nav {
   font-family: var(--font-display);
   font-size: 48px;
   font-weight: 950;
-  color: var(--orange);
+  color: var(--main);
   letter-spacing: 4px;
-  text-shadow: 0 0 30px var(--orange-glow);
+  text-shadow: 0 0 30px var(--main-glow);
   line-height: 1;
 }
 
@@ -138,19 +183,19 @@ nav {
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--main);
   line-height: 1.2;
   margin-bottom: 16px;
 }
 
 .hero-desc {
   font-size: 14px;
-  color: var(--orange);
+  color: var(--main);
   line-height: 1.7;
 }
 
 .hero-desc strong {
-  color: var(--orange);
+  color: var(--main);
   font-weight: 600;
 }
 
@@ -165,7 +210,7 @@ section {
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--main);
   margin-bottom: 6px;
 }
 
@@ -179,7 +224,7 @@ section {
 #problema {
   max-width: 100%;
   padding: 80px 40px;
-  background: var(--orange-glow);
+  background: var(--main-glow);
 }
 
 #problema .inner {
@@ -196,7 +241,7 @@ section {
 
 .problema-card {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--card-border-main);
   border-radius: 10px;
   padding: 24px 20px;
   font-size: 14px;
@@ -206,7 +251,7 @@ section {
 }
 
 .problema-card:hover {
-  border-color: var(--orange);
+  border-color: var(--main);
   transform: translateY(-2px);
 }
 
@@ -253,7 +298,7 @@ section {
 }
 
 .fluxo-card {
-  background: var(--orange);
+  background: var(--main);
   border-radius: 10px;
   padding: 16px 18px;
   flex: 1;
@@ -274,13 +319,13 @@ section {
 
 .fluxo-arrow {
   font-size: 20px;
-  color: var(--orange);
+  color: var(--main);
   flex-shrink: 0;
 }
 
 .ramificar-box {
-  background: rgba(232,130,10,0.08);
-  border: 1px solid var(--card-border);
+  background: var(--main-glow);
+  border: 1px solid var(--card-border-main);
   border-radius: 10px;
   padding: 20px 24px;
   margin-bottom: 28px;
@@ -289,7 +334,7 @@ section {
 .ramificar-box h4 {
   font-size: 14px;
   font-weight: 600;
-  color: var(--orange-light);
+  color: var(--main-light);
   margin-bottom: 10px;
 }
 
@@ -306,7 +351,7 @@ section {
 }
 
 .tech-card {
-  background: var(--orange);
+  background: var(--main);
   border-radius: 10px;
   padding: 18px 16px;
 }
@@ -334,9 +379,9 @@ section {
   font-family: var(--font-display);
   font-size: 64px;
   font-weight: 900;
-  color: var(--orange);
+  color: var(--main);
   letter-spacing: 8px;
-  text-shadow: 0 0 60px var(--orange-glow);
+  text-shadow: 0 0 60px var(--main-glow);
 }
 
 /* ── OBJETIVOS ── */
@@ -373,8 +418,8 @@ section {
 }
 
 .objetivo-item {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: var(--main-glow);
+  border: 1px solid var(--card-border-main);
   border-radius: 10px;
   padding: 18px 24px;
   font-size: 14px;
@@ -383,7 +428,7 @@ section {
 }
 
 .objetivo-item:hover {
-  border-color: var(--orange);
+  border-color: var(--main);
   color: var(--text);
 }
 
@@ -407,7 +452,7 @@ section {
 }
 
 .publico-card {
-  background: var(--orange);
+  background: var(--main);
   border-radius: 10px;
   padding: 28px 22px;
   position: relative;
@@ -473,7 +518,7 @@ section {
 }
 
 .beneficio-card {
-  background: var(--orange);
+  background: var(--main);
   border-radius: 10px;
   padding: 28px 24px;
 }
@@ -494,7 +539,7 @@ section {
 #aplicacao {
   max-width: 100%;
   padding: 80px 40px;
-  background: var(--orange-glow);
+  background: var(--main-glow);
 }
 
 #aplicacao .inner {
@@ -518,7 +563,7 @@ section {
 .aplicacao-num {
   width: 32px;
   height: 32px;
-  background: var(--orange);
+  background: var(--main);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -546,7 +591,7 @@ section {
 /* ── FOOTER ── */
 footer {
   background: var(--dark);
-  border-top: 1px solid var(--card-border);
+  border-top: 1px solid var(--card-border-main);
   padding: 32px 40px;
   display: flex;
   justify-content: space-between;
@@ -559,7 +604,7 @@ footer {
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 900;
-  color: var(--orange);
+  color: var(--main);
   letter-spacing: 4px;
 }
 
@@ -576,7 +621,7 @@ footer {
 }
 
 .footer-team span {
-  color: var(--orange-light);
+  color: var(--main-light);
   font-weight: 500;
 }
 
