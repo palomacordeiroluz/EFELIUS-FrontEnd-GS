@@ -10,8 +10,13 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
+  <div class="theme-switcher">
+    <button class="theme-btn active" onclick="setTheme('solar')" title="Tema Solar">🟠</button>
+    <button class="theme-btn" onclick="setTheme('space')" title="Tema Deep Space">🔵</button>
+    <button class="theme-btn" onclick="setTheme('quantum')" title="Tema Quantum">🟣</button>
+  </div>
+
   <div class="nav-links">
     <a href="#problema">Problemas</a>
     <a href="#tecnologia">Tecnologia</a>
@@ -22,19 +27,17 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div id="hero">
   <div class="hero-bg">
-
-      <img src="assets/hero-bg.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
-    
+    <img src="assets/hero-bg.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
   </div>
-  <div class="hero-bg-placeholder"></div>
+
   <div class="hero-content">
     <div class="hero-logo-block">
       <div class="hero-logo">AFELIUS</div>
       <div class="hero-tagline">ENERGIA DO ESPAÇO PARA A TERRA</div>
     </div>
+
     <div class="hero-text-block">
       <h1 class="hero-title">Energia solar orbital<br>transmitida via laser</h1>
       <p class="hero-desc">
@@ -45,7 +48,6 @@
   </div>
 </div>
 
-<!-- SEÇÃO 1 — PROBLEMA -->
 <div id="problema">
   <div class="inner">
     <div class="section-label">Quais são os problemas?</div>
@@ -58,40 +60,42 @@
   </div>
 </div>
 
-<!-- SEÇÃO 2 — TECNOLOGIA -->
 <div id="tecnologia">
   <div class="tecnologia-bg">
-    <!--
-      ADICIONE SEU GIF AQUI:-->
-      <img src="assets/tech-bg.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
-  
+    <img src="assets/tech-bg.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
   </div>
+
   <div class="inner">
     <div class="section-label">Tecnologia</div>
     <div class="section-sub">Como o sistema funciona em escala real, do satélite até a estação receptora na Terra?</div>
 
     <div class="fluxo-label">FLUXO DO SISTEMA — ESCALA REAL</div>
+
     <div class="fluxo-grid">
       <div class="fluxo-card">
         <p>Satélite</p>
         <span>Painéis orbitam o Sol 24h</span>
       </div>
       <span class="fluxo-arrow">→</span>
+
       <div class="fluxo-card">
         <p>Geração</p>
         <span>Eletricidade → emissor laser</span>
       </div>
       <span class="fluxo-arrow">→</span>
+
       <div class="fluxo-card">
         <p>Array de laser</p>
         <span>Feixe ramificado em múltiplos raios</span>
       </div>
       <span class="fluxo-arrow">→</span>
+
       <div class="fluxo-card">
         <p>Ponto focal</p>
         <span>Todos os feixes convergem</span>
       </div>
       <span class="fluxo-arrow">→</span>
+
       <div class="fluxo-card">
         <p>Conversão</p>
         <span>Célula fotovoltaica transforma luz em eletricidade</span>
@@ -113,14 +117,17 @@
         <p>Arduino / ESP32</p>
         <span>Controle e orientação dos painéis</span>
       </div>
+
       <div class="tech-card">
         <p>Painel solar + LDR</p>
         <span>Captação e medição de energia</span>
       </div>
+
       <div class="tech-card">
         <p>Laser + rádio backup</p>
         <span>Transmissão híbrida e resiliente</span>
       </div>
+
       <div class="tech-card">
         <p>Dashboard web</p>
         <span>Monitoramento em tempo real</span>
@@ -129,18 +136,15 @@
   </div>
 </div>
 
-<!-- DIVISOR COM LOGO -->
 <div class="logo-divider">
   <div class="big-logo">AFELIUS</div>
 </div>
 
-<!-- SEÇÃO 3 — OBJETIVOS -->
 <div id="objetivos">
   <div class="objetivos-bg">
-  
-      <img src="assets/terra.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
-    
+    <img src="assets/terra.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
   </div>
+
   <div class="inner">
     <div class="section-label">Objetivos</div>
     <div class="objetivos-list">
@@ -152,19 +156,21 @@
   </div>
 </div>
 
-<!-- SEÇÃO 4 — PÚBLICO-ALVO -->
 <div id="publico">
   <div class="inner">
     <div class="section-label">Público-alvo →</div>
+
     <div class="publico-grid">
       <div class="publico-card">
         <h4>Regiões remotas</h4>
         <p>Comunidades sem acesso à rede elétrica</p>
       </div>
+
       <div class="publico-card">
         <h4>Missões espaciais</h4>
         <p>Bases lunares e missões de longa duração</p>
       </div>
+
       <div class="publico-card">
         <h4>Indústria</h4>
         <p>Mineração e operações em zonas sem infraestrutura</p>
@@ -173,28 +179,30 @@
   </div>
 </div>
 
-<!-- SEÇÃO 5 — BENEFÍCIOS -->
 <div id="beneficios">
   <div class="beneficios-bg">
-
-      <img src="assets/sunback.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
-    
+    <img src="assets/sunback.gif" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
   </div>
+
   <div class="inner">
     <div class="section-label">Benefícios</div>
+
     <div class="beneficios-grid">
       <div class="beneficio-card">
         <h4>Energia 24h ininterrupta</h4>
         <p>Sem depender de clima ou ciclo dia/noite</p>
       </div>
+
       <div class="beneficio-card">
         <h4>Zero emissão de carbono</h4>
         <p>Fonte 100% renovável e limpa</p>
       </div>
+
       <div class="beneficio-card">
         <h4>Resiliente a falhas</h4>
         <p>Alternância automática laser/rádio</p>
       </div>
+
       <div class="beneficio-card">
         <h4>Escalável globalmente</h4>
         <p>Atende qualquer ponto do planeta</p>
@@ -203,10 +211,10 @@
   </div>
 </div>
 
-<!-- SEÇÃO 6 — APLICAÇÃO -->
 <div id="aplicacao">
   <div class="inner">
     <div class="section-label">Aplicação no dia a dia</div>
+
     <div class="aplicacao-list">
       <div class="aplicacao-item">
         <div class="aplicacao-num">1</div>
@@ -215,6 +223,7 @@
           <p>Aldeias remotas, comunidades ribeirinhas e zonas rurais recebem energia sem necessidade de cabos ou torres.</p>
         </div>
       </div>
+
       <div class="aplicacao-item">
         <div class="aplicacao-num">2</div>
         <div class="aplicacao-text">
@@ -222,6 +231,7 @@
           <p>Bases na Lua ou em Marte recebem energia transmitida de satélites orbitais, eliminando a necessidade de combustível pesado.</p>
         </div>
       </div>
+
       <div class="aplicacao-item">
         <div class="aplicacao-num">3</div>
         <div class="aplicacao-text">
@@ -233,10 +243,10 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">AFELIUS</div>
   <div class="footer-copy">© 2026 — Projeto Acadêmico — Engenharia de Software</div>
+
   <div class="footer-team">
     Ana Beatriz &nbsp; <span>RM: 569087</span><br>
     Paloma &nbsp; <span>RM: 571460</span><br>

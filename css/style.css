@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
 
-/* ── VARIABLES ── */
 :root {
   --orange: #E8820A;
   --orange-light: #F5A235;
@@ -16,9 +15,16 @@
   --font-body: 'Exo 2', sans-serif;
 }
 
-/* ── RESET ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--dark);
   color: var(--text);
@@ -27,18 +33,51 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 18px 40px;
   background: rgba(8,8,8,0.7);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(232,130,10,0.1);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* BOTÕES DE TEMA */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.25s ease;
+  box-shadow: 0 0 12px transparent;
+}
+
+.theme-btn:hover {
+  transform: scale(1.12);
+  border-color: var(--orange);
+  box-shadow: 0 0 16px var(--orange-glow);
+}
+
+.theme-btn.active {
+  border-color: var(--orange-light);
+  box-shadow: 0 0 18px var(--orange-glow);
 }
 
 .nav-links {
@@ -61,7 +100,7 @@ nav {
   color: var(--orange-light);
 }
 
-/* ── HERO ── */
+/* HERO */
 #hero {
   position: relative;
   min-height: 100vh;
@@ -75,7 +114,7 @@ nav {
   position: absolute;
   inset: 0;
   background: var(--dark);
-  background-image: url('assets/hero-bg.gif'); 
+  background-image: url('assets/hero-bg.gif');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -92,7 +131,6 @@ nav {
     rgba(8,8,8,0.95) 100%
   );
 }
-
 
 .hero-content {
   position: relative;
@@ -154,7 +192,7 @@ nav {
   font-weight: 600;
 }
 
-/* ── SECTIONS SHARED ── */
+/* SEÇÕES */
 section {
   padding: 80px 40px;
   max-width: 1200px;
@@ -175,7 +213,7 @@ section {
   margin-bottom: 32px;
 }
 
-/* ── PROBLEMA ── */
+/* PROBLEMA */
 #problema {
   max-width: 100%;
   padding: 80px 40px;
@@ -210,7 +248,7 @@ section {
   transform: translateY(-2px);
 }
 
-/* ── TECNOLOGIA ── */
+/* TECNOLOGIA */
 #tecnologia {
   max-width: 100%;
   padding: 80px 40px;
@@ -219,7 +257,6 @@ section {
   overflow: hidden;
 }
 
-/* GIF background da seção tecnologia */
 .tecnologia-bg {
   position: absolute;
   inset: 0;
@@ -279,7 +316,7 @@ section {
 }
 
 .ramificar-box {
-  background: rgba(232,130,10,0.08);
+  background: var(--orange-glow);
   border: 1px solid var(--card-border);
   border-radius: 10px;
   padding: 20px 24px;
@@ -323,7 +360,7 @@ section {
   color: rgba(0,0,0,0.6);
 }
 
-/* ── DIVISOR COM LOGO ── */
+/* DIVISOR */
 .logo-divider {
   text-align: center;
   padding: 30px 40px;
@@ -339,7 +376,7 @@ section {
   text-shadow: 0 0 60px var(--orange-glow);
 }
 
-/* ── OBJETIVOS ── */
+/* OBJETIVOS */
 #objetivos {
   max-width: 100%;
   padding: 9% 40px;
@@ -351,7 +388,7 @@ section {
 .objetivos-bg {
   position: absolute;
   inset: 0;
-  background-image: url('assets/terra.gif'); 
+  background-image: url('assets/terra.gif');
   background-size: cover;
   background-position: center;
   opacity: 0.9;
@@ -387,7 +424,7 @@ section {
   color: var(--text);
 }
 
-/* ── PÚBLICO ── */
+/* PÚBLICO */
 #publico {
   max-width: 100%;
   padding: 40px 20px;
@@ -414,15 +451,6 @@ section {
   overflow: hidden;
 }
 
-.publico-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.15;
-}
-
 .publico-card h4 {
   font-size: 16px;
   font-weight: 700;
@@ -439,7 +467,7 @@ section {
   z-index: 1;
 }
 
-/* ── BENEFÍCIOS ── */
+/* BENEFÍCIOS */
 #beneficios {
   max-width: 100%;
   padding: 80px 40px;
@@ -451,7 +479,7 @@ section {
 .beneficios-bg {
   position: absolute;
   inset: 0;
-  background-image: url('assets/sunback.gif'); 
+  background-image: url('assets/sunback.gif');
   background-size: cover;
   background-position: center;
   opacity: 0.7;
@@ -490,7 +518,7 @@ section {
   color: rgba(0,0,0,0.6);
 }
 
-/* ── APLICAÇÃO ── */
+/* APLICAÇÃO */
 #aplicacao {
   max-width: 100%;
   padding: 80px 40px;
@@ -543,7 +571,7 @@ section {
   line-height: 1.6;
 }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
   background: var(--dark);
   border-top: 1px solid var(--card-border);
@@ -580,25 +608,98 @@ footer {
   font-weight: 500;
 }
 
-/* ── RESPONSIVO ── */
+/* ANIMAÇÃO */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  nav { padding: 14px 20px; }
-  .nav-links { gap: 16px; }
-  .nav-links a { font-size: 11px; }
+  nav {
+    padding: 14px 20px;
+    gap: 14px;
+  }
 
-  #hero { padding: 0 20px 60px; }
-  .hero-content { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .hero-text-block { text-align: left; }
-  .hero-logo { font-size: 36px; }
-  .hero-title { font-size: 22px; }
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
 
-  section, #problema, #tecnologia, #objetivos, #publico, #beneficios, #aplicacao { padding: 60px 20px; }
+  .nav-links {
+    gap: 12px;
+    overflow-x: auto;
+  }
 
-  .problema-grid { grid-template-columns: 1fr 1fr; }
-  .fluxo-grid { flex-direction: column; }
-  .fluxo-arrow { transform: rotate(90deg); }
-  .tech-cards { grid-template-columns: 1fr 1fr; }
-  .publico-grid { grid-template-columns: 1fr; }
-  .beneficios-grid { grid-template-columns: 1fr; }
-  .logo-divider .big-logo { font-size: 40px; }
+  .nav-links a {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  #hero {
+    padding: 0 20px 60px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .hero-text-block {
+    text-align: left;
+  }
+
+  .hero-logo {
+    font-size: 36px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  section,
+  #problema,
+  #tecnologia,
+  #objetivos,
+  #publico,
+  #beneficios,
+  #aplicacao {
+    padding: 60px 20px;
+  }
+
+  .problema-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fluxo-grid {
+    flex-direction: column;
+  }
+
+  .fluxo-arrow {
+    transform: rotate(90deg);
+  }
+
+  .tech-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .publico-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-divider .big-logo {
+    font-size: 40px;
+  }
 }
